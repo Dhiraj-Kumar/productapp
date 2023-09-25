@@ -35,7 +35,7 @@ namespace LayeredApp.Controllers
             return Ok(repo.GetProduct(id));
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             repo.DeleteProduct(id);
