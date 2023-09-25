@@ -28,5 +28,11 @@ namespace LayeredApp.Controllers
             repo.AddProduct(product);
             return Ok("Product Addedd");
         }
+
+        [HttpGet("{id}")]
+        public ActionResult Get(int id)
+        {
+            return Ok(repo.GetProduct(id));
+        }
     }
 }
