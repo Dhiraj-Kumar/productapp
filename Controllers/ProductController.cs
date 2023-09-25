@@ -26,13 +26,20 @@ namespace LayeredApp.Controllers
         public IActionResult Post(Product product)
         {
             repo.AddProduct(product);
-            return Ok("Product Addedd");
+            return Ok("Product Added");
         }
 
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
             return Ok(repo.GetProduct(id));
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            repo.DeleteProduct(id);
+            return Ok("Product Deleted");
         }
     }
 }
